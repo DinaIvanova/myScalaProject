@@ -1,11 +1,8 @@
 object StringProcessor {
   def processStrings(strings: List[String]): List[String] = {
-    var result = List[String]()
-    for (str <- strings) {
-      if (str.length > 3) {
-        result = result :+ str.toUpperCase
-      }
-    }
+    val result = strings
+      .filter(string => string.length > 3)
+      .map(string => string.toUpperCase)
     result
   }
 
